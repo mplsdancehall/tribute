@@ -4,19 +4,9 @@
   padding: 0;
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  text-align: center;
-  color: white;
   list-style-type: none;
   border: 1px solid orchid;
-}
-
-html {
-}
-
-body {
-  width: 100%;
-  background: linear-gradient(
+  --bckgrd-gradient: linear-gradient(
     199deg,
     indigo,
     blueviolet,
@@ -24,11 +14,27 @@ body {
     plum,
     skyblue
   );
+}
+
+html {
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  
+}
+
+body {
+  width: 100%;
+  background: var(--bckgrd-gradient);
   margin: 0;
   padding: 0;
 }
 main {
-  margin: 5rem auto 0px auto;
+  margin: 5rem auto 3rem auto;
+}
+section {
+  min-height: 100vh;
+  padding-top: 6em;
 }
 
 h2 {
@@ -48,6 +54,7 @@ a {
 }
 
 ul li {
+  font-size: 1.1em;
 }
 
 footer {
@@ -82,9 +89,11 @@ footer a,
 footer p {
 }
 
-section {
-  min-height: 100vh;
-  padding-top: 8em;
+#home {
+  background-image: url(https://static01.nyt.com/images/2019/06/02/arts/02prince-1/02prince-1-superJumbo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
 }
 
 h2,
@@ -115,9 +124,9 @@ h3,
 span.discography-year {
   font-family: "Roboto Mono", monospace;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.75rem;
   margin-left: 1rem;
-  color: skyblue;
+  color: indigo;
   float: right;
 }
 
@@ -134,14 +143,20 @@ figure,
   border-radius: 5%;
 }
 img,
-#image,
-.img-proclamation {
+#image {
   width: 100%;
   max-width: 550px;
   margin: 0 auto;
 }
 #image {
   border-radius: 5%;
+}
+
+.img-proclamation {
+  width: 30%;
+}
+.img-2022honor {
+
 }
 figcaption,
 #img-caption {
@@ -158,6 +173,7 @@ span.img-caption-title {
   width: 100%;
   max-width: 320px;
   min-width: 20rem;
+ /* height: auto; */
   margin: 0 auto;
 }
 
@@ -167,7 +183,7 @@ span.img-caption-title {
   flex-direction: column;
 }
 
-#tribute-link-div {
+#tribute-link-div .more-info {
   padding: 4rem 0;
 }
 
@@ -177,8 +193,15 @@ footer {
   width: 100%;
   background-color: darkslateblue;
 }
+.video {
+  margin-bottom: 5rem;
+}
+#ytplayer {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
 
-@media (min-width: 600px) {
+@media screen and (min-width: 620px) {
   main {
     padding: 2rem;
   }
@@ -195,3 +218,31 @@ footer {
     justify-content: space-around;
   }
 }
+
+
+@media screen and (min-width: 800px)  {
+  #title {
+    font-size: 7rem;
+    line-height: 6rem;
+    margin-top: 1rem;
+} 
+  #subhead {
+    font-size: 6rem;
+  }
+  p,
+  a,
+  ul li,
+  nav li,
+  nav a,
+  figcaption,
+  #img-caption {
+  font-size: 1.5rem;
+  }
+  h2,
+  h3 {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+  #tribute-info {
+    max-width: 1000px;
+  }
