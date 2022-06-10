@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  list-style-type: none;
+  border: 1px solid orchid;
+}
+
+html {
+}
+
+body {
+  width: 100%;
+  background: linear-gradient(
+    199deg,
+    indigo,
+    blueviolet,
+    mediumpurple 40%,
+    plum,
+    skyblue
+  );
+  margin: 0;
+  padding: 0;
+}
+main {
+  margin: 5rem auto 0px auto;
+}
+
+h2 {
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 0;
+  color: inherit;
+}
+
+ul li {
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 25rem;
+  color: white;
+  background: linear-gradient(199deg, indigo, blueviolet, mediumpurple);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+nav li,
+nav a {
+  font-size: 1.2rem;
+  line-height: 5rem;
+}
+footer a,
+footer p {
+}
+
+section {
+  min-height: 100vh;
+  padding-top: 8em;
+}
+
+h2,
+h3,
+#title,
+#subhead {
+  font-family: "Arizonia", cursive;
+  font-weight: lighter;
+  margin-bottom: 0.25em;
+}
+
+#title {
+  color: white;
+  font-size: 5rem;
+  line-height: 4rem;
+  font-weight: lighter;
+}
+
+#subhead {
+  font-size: 4em;
+  color: indigo;
+  font-weight: bold;
+  line-height: 3rem;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 4px white, -1px -1px 12px white;
+}
+
+span.discography-year {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: skyblue;
+  float: right;
+}
+
+figure,
+#img-div {
+  background: indigo;
+  padding: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#img-div {
+  border-radius: 5%;
+}
+img,
+#image,
+.img-proclamation {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+#image {
+  border-radius: 5%;
+}
+figcaption,
+#img-caption {
+  color: white;
+  font-size: 0.9em;
+  font-weight: 200;
+  margin: 0 2rem -1em 2rem;
+}
+span.img-caption-title {
+  font-size: 2rem;
+}
+
+#tribute-info {
+  width: 100%;
+  max-width: 320px;
+  min-width: 20rem;
+  margin: 0 auto;
+}
+
+#discography-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#tribute-link-div {
+  padding: 4rem 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: darkslateblue;
+}
+
+@media (min-width: 600px) {
+  main {
+    padding: 2rem;
+  }
+  figure,
+  #img-div {
+    padding: 2rem;
+  }
+  #tribute-info {
+    width: 100%;
+    max-width: 800px;
+  }
+  #discography-list {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
