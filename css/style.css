@@ -5,7 +5,6 @@
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
   list-style-type: none;
-  border: 1px solid darkmagenta;
   --bckgrd-gradient: linear-gradient(
     199deg,
     rgb(27, 0, 46) 10%,
@@ -15,13 +14,21 @@
     orchid,
     deepskyblue 90%,
     darkslateblue 
-  );
+    );
   --navbar-grad: linear-gradient(
     199deg,
     indigo,
     blueviolet,
     mediumpurple
-  )
+    );
+  --footer-grad: linear-gradient(
+    199deg,
+    mediumpurple,
+    rgb(86, 114, 204),
+    darkslateblue 40% 
+  );
+  /* BORDER FOR TESTING PURPOSES ONLY 
+  border: 1px solid darkmagenta;*/
 }
 
 html {
@@ -36,8 +43,12 @@ body {
   margin: 0;
   padding: 0;
 }
+header {
+  z-index: 100;
+}
 main {
   margin: 0 auto;
+  z-index: 1;
 }
 
 h2 {
@@ -59,18 +70,6 @@ a {
 ul li {
   font-size: 1.1rem;
 }
-footer a,
-footer p {
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 0.75rem;
-  background-color: darkslateblue;
-}
 nav {
   position: fixed;
   top: 0;
@@ -79,6 +78,7 @@ nav {
   min-width: 25rem;
   color: white;
   background: var(--navbar-grad);
+  z-index: 5;
 }
 
 nav ul {
@@ -92,6 +92,18 @@ nav a {
   font-size: 1.2rem;
   /*  text-shadow: 2px 2px 6px indigo, -1px -1px 12px indigo;*/
   padding: 1rem .25rem;
+}
+footer a,
+footer p {
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--footer-grad);
 }
 
 section {
@@ -108,14 +120,16 @@ section {
 }
 #home .bottom {
   position: absolute;
-  left: 10%;
-  top: 93vh;
-  width: 80%;
+  left: 1rem;
+  top: 100vh;
+  width: 90%;
+  max-width: 400px;
   margin: 0 auto;
   align: center;
   font-size: .85rem;
   font-weight: 400;
-  text-shadow: 1px 1px 3px black, -1px -1px 4px black;
+  /* background-color: indigo ;
+ text-shadow: 1px 1px 3px black, -1px -1px 4px black; */
 }
 
 h2,
@@ -158,7 +172,7 @@ figure,
   background: indigo;
   padding: 1rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -179,7 +193,7 @@ img,
 .murals {
   display: flex;
   flex-direction: row;
-  
+
 }
 .mural-fox9 {
   flex: 1.778;
@@ -194,14 +208,22 @@ img,
   width: 1fr;
 }
 .img-2022honor {
-
+  display: inline;
+  justify-content: space-evenly;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 49%;
+}
+.historical {
+  display: flex;
+  flex-direction: column;
 }
 figcaption,
 #img-caption {
   color: white;
   font-size: 0.9em;
   font-weight: 200;
-  margin: 0 2rem -1em 2rem;
+  margin: 0 auto;
 }
 span.img-caption-title {
   font-size: 2rem;
@@ -250,6 +272,13 @@ span.img-caption-title {
     flex-direction: row;
     justify-content: space-around;
     line-height: 3rem;
+  }
+  .historical {
+    flex-direction: row;
+  }
+  .historical img {
+    display: flex;
+    flex-wrap: nowrap;
   }
 }
 
