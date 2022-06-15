@@ -2,30 +2,30 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 10px;
+  font-size: 11px;
   font-family: "Montserrat", sans-serif;
   list-style-type: none;
   --bckgrd-gradient: linear-gradient(
     199deg,
     rgb(27, 0, 46) 10%,
-    indigo,
-    blueviolet 25%,
-    mediumpurple,
-    orchid,
-    deepskyblue 90%,
-    darkslateblue 
+    rgb(65, 2, 110),
+    rgb(114, 38, 185) 25%,
+    rgb(113, 72, 194),
+    rgb(168, 57, 165),
+    rgb(20, 117, 150) 90%,
+    rgb(46, 38, 97) 
     );
   --navbar-grad: linear-gradient(
     199deg,
-    indigo,
-    blueviolet,
-    mediumpurple
+    rgb(65, 2, 110),
+    rgb(114, 38, 185),    
+    rgb(113, 72, 194)
     );
   --footer-grad: linear-gradient(
     199deg,
-    mediumpurple,
-    rgb(86, 114, 204),
-    darkslateblue 40% 
+    rgb(91, 54, 165),
+    rgb(61, 88, 175),
+    rgb(46, 38, 97) 60% 
   );
   /* BORDER FOR TESTING PURPOSES ONLY 
   border: 1px solid darkmagenta;*/
@@ -46,19 +46,71 @@ body {
 header {
   z-index: 100;
 }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 20rem;
+  color: white;
+  background: var(--navbar-grad);
+  z-index: 5;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+nav li,
+nav a,
+nav a:link {
+  font-size: 1.2rem;
+  /*  text-shadow: 2px 2px 6px indigo, -1px -1px 12px indigo;*/
+  padding: 1rem .25rem;
+}
+nav a:hover,
+#tribute-link:hover {
+  color: thistle;
+  font-weight: 600;
+}
+nav a:active,  {
+
+}
+
 main {
   margin: 0 auto;
   z-index: 1;
 }
+h2,
+h3,
+#title,
+#subhead {
+  font-family: "Arizonia", cursive;
+  font-weight: lighter;
+  margin-bottom: 2vw;
+}
+
+#title {
+  color: white;
+  font-size: 14vw;
+  text-shadow: 2px 2px 6px black, -1px -1px 12px black;
+  font-weight: lighter;
+}
+
+#subhead {
+  font-size: 11vw;
+  color: indigo;
+  font-weight: bold;
+  text-shadow: 1px 1px 8vw white, -1px -1px 3vw white;
+}
 
 h2 {
-  font-size: 3.5rem;
-  line-height: 3.5rem;
+  font-size: 10vw;
 }
 
 h3 {
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 8vw;
 }
 
 a {
@@ -70,46 +122,24 @@ a {
 ul li {
   font-size: 1.1rem;
 }
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 25rem;
-  color: white;
-  background: var(--navbar-grad);
-  z-index: 5;
-}
-
-nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-nav li,
-nav a {
-  font-size: 1.2rem;
-  /*  text-shadow: 2px 2px 6px indigo, -1px -1px 12px indigo;*/
-  padding: 1rem .25rem;
-}
-footer a,
-footer p {
-}
 
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 0.75rem;
+  padding: 0;
   background: var(--footer-grad);
+}
+footer a,
+footer p {
+  padding: 1rem 0.2rem;
 }
 
 section {
   height: auto;
   min-height: 100vh;
-  padding-top: 6em;
+  padding-top: 4em;
 }
 
 #home {
@@ -120,81 +150,87 @@ section {
 }
 #home .bottom {
   position: absolute;
-  left: 1rem;
   top: 100vh;
-  width: 90%;
-  max-width: 400px;
+  width: 100%;
   margin: 0 auto;
   align: center;
   font-size: .85rem;
   font-weight: 400;
-  /* background-color: indigo ;
- text-shadow: 1px 1px 3px black, -1px -1px 4px black; */
+  background-color: indigo ;
+ /*  text-shadow: 1px 1px 3px black, -1px -1px 4px black; */
+}
+#honors,
+#tribute-link-div {
+  width: 96%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-h2,
-h3,
-#title,
-#subhead {
-  font-family: "Arizonia", cursive;
-  font-weight: lighter;
-  margin-bottom: 0.25em;
+/* ==THIS SECTION IS REQUIRED FOR FCC CERT== */
+img,
+#image { /* MUST DISPLAY AS BLOCK */
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  aspect-ratio: inherit;
 }
-
-#title {
-  color: white;
-  font-size: 5rem;
-  text-shadow: 2px 2px 6px black, -1px -1px 12px black;
-  line-height: 4rem;
-  font-weight: lighter;
+#image { 
+  /* MUST MAXWIDTH=100 CENTRED HEIGHT=AUTO */
+  height: auto;
 }
-
-#subhead {
-  font-size: 4em;
-  color: indigo;
-  font-weight: bold;
-  line-height: 3rem;
-  margin-bottom: 0.5em;
-  text-shadow: 1px 1px 10px white, -1px -1px 12px white;
-}
-
-span.discography-year {
-  font-family: "Roboto Mono", monospace;
-  font-weight: 300;
-/*  font-size: 0.75rem;*/
-  margin-left: .9rem;
-  color: indigo;
-  float: right;
-}
+/* ==END OF FCC CERT REQUIREMENT== */
 
 figure,
 #img-div {
-  background: indigo;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: purple;
+  margin: 0 auto;
   width: 100%;
-  max-width: 800px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
 }
+figure {
+  padding: 0;
+}
 #img-div {
+  padding: 2vw;
+  border-radius: 5%;
+  background: var(--footer-grad);
+}
+#img-div img {
   border-radius: 5%;
 }
-img,
-#image {
-  display: block;
-  width: 100%;
-  max-width: 100%;
+
+figcaption,
+#img-caption {
+  color: white;
+  font-size: 1rem;
   margin: 0 auto;
 }
-#image {
-  border-radius: 5%;
+span.img-caption-title {
+  font-size: 5vw;
 }
 
-.murals {
+
+.mural,
+street {
   display: flex;
-  flex-direction: row;
-
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 100%;
+  background-color: rgb(158, 73, 236);
 }
+
+.img-row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+}
+
 .mural-fox9 {
   flex: 1.778;
 }
@@ -208,33 +244,28 @@ img,
   width: 1fr;
 }
 .img-2022honor {
-  display: inline;
-  justify-content: space-evenly;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  width: 49%;
+  display: flex;
+  
 }
 .historical {
   display: flex;
   flex-direction: column;
-}
-figcaption,
-#img-caption {
-  color: white;
-  font-size: 0.9em;
-  font-weight: 200;
-  margin: 0 auto;
-}
-span.img-caption-title {
-  font-size: 2rem;
 }
 
 #tribute-info {
   width: 100%;
   max-width: 320px;
   min-width: 20rem;
- /* height: auto; */
+  /* height: auto; */
   margin: 0 auto;
+}
+.more-info {
+  padding: 3rem 0;
+  margin-bottom: 4rem;
+}
+#tribute-link {
+  font-size: 3vw;
+  padding: 3vw;
 }
 
 #discography-list {
@@ -244,8 +275,13 @@ span.img-caption-title {
   line-height: 1.5rem;
 }
 
-#tribute-link-div .more-info {
-  padding: 4rem 0;
+span.discography-year {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+/*  font-size: 0.75rem;*/
+  margin-right: .75rem;
+  color: thistle ;
+  float: left;
 }
 
 .video {
@@ -256,14 +292,15 @@ span.img-caption-title {
   aspect-ratio: 16 / 9;
 }
 
-@media screen and (min-width: 620px) {
-  main {
-    padding: 2rem;
+@media screen and (min-width: 630px) {
+  /* main {
+    padding: 2rem; 
   }
   figure,
   #img-div {
     padding: 2rem;
-  }
+  }*/
+
   #tribute-info {
     width: 100%;
     max-width: 800px;
@@ -273,25 +310,45 @@ span.img-caption-title {
     justify-content: space-around;
     line-height: 3rem;
   }
-  .historical {
+  /* */
+  .img-row {
+    display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 100%;
   }
+  .mural-strib {
+    flex:0.684 ;
+  }
+  .mural-srcmag {
+    flex: 0.871 ;
+  }
+  .img-2022honor {
+ /*   display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    width: 50%;
+}
+  .historical {
+      flex-direction: row;
+    }
   .historical img {
     display: flex;
     flex-wrap: nowrap;
   }
-}
-
 
 @media screen and (min-width: 800px)  {
-  #title {
+/*  #title {
     font-size: 7rem;
     line-height: 6rem;
     margin-top: 1rem;
 } 
   #subhead {
     font-size: 6rem;
-  }
+  } */
+
   p,
   a,
   ul li,
@@ -301,11 +358,12 @@ span.img-caption-title {
   #img-caption {
   font-size: 1.5rem;
   }
+  /*
   h2,
   h3 {
     font-size: 5rem;
     line-height: 5rem;
-  }
+  } */
   #tribute-info {
     max-width: 1000px;
   }
